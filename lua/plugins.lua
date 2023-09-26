@@ -38,6 +38,15 @@ return require('packer').startup(function(use)
   -- Wakatime
   use 'wakatime/vim-wakatime'
 
+
+  use 'jose-elias-alvarez/null-ls.nvim'
+  -- Prettier
+  use 'MunifTanjim/prettier.nvim'
+
+  -- Auto Pairs & Tags
+  use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-ts-autotag'
+
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.3',
@@ -47,6 +56,15 @@ return require('packer').startup(function(use)
   -- Treesitter
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('nvim-treesitter/playground')
+
+  -- Refactoringj
+  use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" }
+    }
+  }
 
   -- Gruvbox
   use { "ellisonleao/gruvbox.nvim" }
