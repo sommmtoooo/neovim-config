@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
     use { "catppuccin/nvim", as = "catppuccin" }
     use { 'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' } }
     use { 'sainnhe/gruvbox-material' }
+    use { 'lunarvim/primer.nvim', lazy = false }
     use { "ellisonleao/gruvbox.nvim" }
 
     -- Status Line

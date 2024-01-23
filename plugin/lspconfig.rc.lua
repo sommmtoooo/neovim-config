@@ -145,8 +145,6 @@ nvim_lsp.astro.setup {
 }
 
 nvim_lsp.gopls.setup {
-    on_attach = on_attach,
-    capabilities = capabilities
 }
 
 nvim_lsp.clangd.setup {}
@@ -154,6 +152,19 @@ nvim_lsp.kotlin_language_server.setup {}
 nvim_lsp.dockerls.setup {}
 nvim_lsp.emmet_language_server.setup {
     on_attach = on_attach,
+    filetypes = {
+        "html",
+        "typescriptreact",
+        "javascriptreact",
+        "css",
+        "sass",
+        "scss",
+        "less",
+        "javascript",
+        "typescript",
+        "markdown",
+        "ejs",
+    },
     capabilities = capabilities
 }
 nvim_lsp.sqlls.setup {
