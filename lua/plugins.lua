@@ -67,6 +67,8 @@ return require('packer').startup(function(use)
     use { 'williamboman/mason.nvim' }
     use { 'williamboman/mason-lspconfig.nvim' }
 
+    -- Terminal
+    use "akinsho/toggleterm.nvim"
 
     -- Auto Completion (LSP KIND & NVIM)
     use { 'onsails/lspkind-nvim' }
