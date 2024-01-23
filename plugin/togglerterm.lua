@@ -13,7 +13,6 @@ require("toggleterm").setup {
 
 -- Mappings
 --
-local opts = { buffer = 0 }
-vim.keymap.set('t', "<leader>tx", [[<C-\><C-n>]], opts)
+vim.keymap.set('t', "<leader>tm", [[<C-\><C-n>]])
 --
 --
