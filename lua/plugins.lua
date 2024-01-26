@@ -37,6 +37,10 @@ return require('packer').startup(function(use)
     use 'kyazdani42/nvim-web-devicons' -- File Icons
     use 'NvChad/nvim-colorizer.lua'
 
+    -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
+    use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
+    use 'romgrk/barbar.nvim'
+
     -- Wakatime
     use 'wakatime/vim-wakatime'
 
