@@ -40,7 +40,7 @@ return require('packer').startup(function(use)
 
     -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
     use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
-    use 'romgrk/barbar.nvim'
+    use 'nanozuki/tabby.nvim'
 
     -- Wakatime
     use 'wakatime/vim-wakatime'
