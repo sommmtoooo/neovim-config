@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
     use { 'sainnhe/gruvbox-material' }
     use { 'lunarvim/primer.nvim', lazy = false }
     use { "ellisonleao/gruvbox.nvim" }
+    use { 'nyoom-engineering/oxocarbon.nvim' }
 
     -- Status Line
     use 'hoob3rt/lualine.nvim'

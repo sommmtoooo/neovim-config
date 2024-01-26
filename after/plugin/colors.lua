@@ -3,4 +3,4 @@ function ColorMeShell(color)
     vim.cmd.colorscheme(color)
 end
 
-ColorMeShell("gruvbox-material")
+ColorMeShell("catppuccin")
