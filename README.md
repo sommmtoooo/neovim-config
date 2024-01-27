@@ -11,7 +11,7 @@
     mv ~/.local/share/nvim ~/.local/share/nvim.bak
 
 
-#### Clone AstroNvim
+#### Clone
 
 ```shell
 git clone https://github.com/somtodev/neovim-config ~/.config/nvim
