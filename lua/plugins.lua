@@ -3,11 +3,7 @@ if (not status) then
     print('Packer is not installed')
     return
 end
-
 vim.cmd [[packadd packer.nvim]]
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
@@ -21,17 +17,13 @@ return require('packer').startup(function(use)
     -- Load on specific commands
     use { 'tpope/vim-dispatch', opt = true, cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } }
 
-    -- You can specify multiple plugins in a single call
+
     use { 'tjdevries/colorbuddy.vim' }
 
     -- Themes
-    use { 'dracula/vim', as = 'dracula' }
-    use { "catppuccin/nvim", as = "catppuccin" }
-    use { 'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' } }
     use { 'sainnhe/gruvbox-material' }
     use { 'lunarvim/primer.nvim', lazy = false }
     use { "ellisonleao/gruvbox.nvim" }
-    use { 'nyoom-engineering/oxocarbon.nvim' }
 
     -- Status Line
     use 'hoob3rt/lualine.nvim'
@@ -47,7 +39,6 @@ return require('packer').startup(function(use)
 
     -- Code Action
     use { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu' }
-
     use 'jose-elias-alvarez/null-ls.nvim'
 
     -- Prettier
@@ -59,10 +50,14 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
+    use {
+        'nvim-tree/nvim-tree.lua'
+    }
+
+
     -- Treesitter
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
-
 
     -- Fugitive
     use('tpope/vim-fugitive')

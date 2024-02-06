@@ -1,6 +1,6 @@
 local theme = {
     fill = 'TabLineFill',
-    -- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
+    -- fill = { fg = '#f2e9de', bg = '#181818', style = 'italic' },
     head = 'TabLine',
     current_tab = 'TabLineSel',
     tab = 'TabLine',
@@ -10,7 +10,7 @@ local theme = {
 require('tabby.tabline').set(function(line)
     return {
         {
-            { '  ', hl = theme.head },
+            { ' Somto  ', hl = theme.head },
             line.sep('', theme.head, theme.fill),
         },
         line.tabs().foreach(function(tab)
@@ -45,3 +45,6 @@ require('tabby.tabline').set(function(line)
     }
 end)
 
+-- Make Tabby Show @ 2 Tabs
+vim.o.showtabline = 2
+-- { '  ', hl = theme.head },
