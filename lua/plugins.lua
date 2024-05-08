@@ -24,6 +24,8 @@ return require('packer').startup(function(use)
     use { 'sainnhe/gruvbox-material' }
     use { 'lunarvim/primer.nvim', lazy = false }
     use { "ellisonleao/gruvbox.nvim" }
+    use { "olimorris/onedarkpro.nvim" }
+    use { "2nthony/vitesse.nvim" }
 
     -- Status Line
     use 'hoob3rt/lualine.nvim'
@@ -78,6 +80,7 @@ return require('packer').startup(function(use)
     use { 'hrsh7th/cmp-nvim-lua' }
     use { 'hrsh7th/cmp-path' }
     use { 'saadparwaiz1/cmp_luasnip' }
+    use { 'windwp/nvim-ts-autotag' }
 
     -- Snippets
     use { 'L3MON4D3/LuaSnip' }

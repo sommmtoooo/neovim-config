@@ -128,6 +128,8 @@ nvim_lsp.lua_ls.setup {
     },
 }
 
+nvim_lsp.pyright.setup {}
+
 nvim_lsp.tailwindcss.setup {
     on_attach = on_attach,
     capabilities = capabilities
@@ -164,6 +166,7 @@ nvim_lsp.emmet_language_server.setup {
         "typescript",
         "markdown",
         "ejs",
+        "php"
     },
     capabilities = capabilities
 }

@@ -4,3 +4,4 @@ function ColorMeShell(color)
 end
 
 ColorMeShell("gruvbox-material")
+-- ColorMeShell("onedark_dark")
