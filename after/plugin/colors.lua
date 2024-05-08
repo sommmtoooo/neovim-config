@@ -3,5 +3,5 @@ function ColorMeShell(color)
     vim.cmd.colorscheme(color)
 end
 
-ColorMeShell("gruvbox-material")
+ColorMeShell("vitesse")
 -- ColorMeShell("onedark_dark")
