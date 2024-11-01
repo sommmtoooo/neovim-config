@@ -94,11 +94,24 @@ nvim_lsp.flow.setup {
     capabilities = capabilities
 }
 
-nvim_lsp.tsserver.setup {
+nvim_lsp.ts_ls.setup {
     on_attach = on_attach,
     filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact" },
     cmd = { "typescript-language-server", "--stdio" },
     capabilities = capabilities
+}
+
+nvim_lsp.rust_analyzer.setup {
+    settings = {
+        ['rust-analyzer'] = {
+            check = {
+                command = "clippy",
+            },
+            diagnostics = {
+                enable = true
+            }
+        }
+    }
 }
 
 nvim_lsp.sourcekit.setup {
@@ -129,8 +142,15 @@ nvim_lsp.lua_ls.setup {
 }
 
 nvim_lsp.pyright.setup {}
+nvim_lsp.dockerls.setup {}
 
 nvim_lsp.tailwindcss.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
+
+nvim_lsp.prismals.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }

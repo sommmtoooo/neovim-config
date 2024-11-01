@@ -3,5 +3,10 @@ function ColorMeShell(color)
     vim.cmd.colorscheme(color)
 end
 
+-- ColorMeShell("gruvbox-material")
 ColorMeShell("vitesse")
 -- ColorMeShell("onedark_dark")
+-- ColorMeShell("github_dark")
+-- ColorMeShell("tokyonight")
+-- ColorMeShell("github_light")
+-- ColorMeShell("solarized")

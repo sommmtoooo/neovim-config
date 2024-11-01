@@ -26,6 +26,14 @@ return require('packer').startup(function(use)
     use { "ellisonleao/gruvbox.nvim" }
     use { "olimorris/onedarkpro.nvim" }
     use { "2nthony/vitesse.nvim" }
+    use({ 'projekt0n/github-nvim-theme' })
+    use {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    }
+    use 'shaunsingh/solarized.nvim'
 
     -- Status Line
     use 'hoob3rt/lualine.nvim'
@@ -55,6 +63,14 @@ return require('packer').startup(function(use)
     use {
         'nvim-tree/nvim-tree.lua'
     }
+
+    -- Markdown Previewer
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+        ft = { "markdown" },
+    })
 
 
     -- Treesitter
