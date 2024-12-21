@@ -108,15 +108,6 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- Refactoring
-    use {
-        "ThePrimeagen/refactoring.nvim",
-        requires = {
-            { "nvim-lua/plenary.nvim" },
-            { "nvim-treesitter/nvim-treesitter" }
-        }
-    }
-
     -- Rayso
     use {
         "TobinPalmer/rayso.nvim",
