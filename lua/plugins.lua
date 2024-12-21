@@ -81,6 +81,14 @@ return require('packer').startup(function(use)
     -- Fugitive
     use('tpope/vim-fugitive')
 
+    -- Noice
+    use {
+        'folke/noice.nvim',
+        requires = {
+            'MunifTanjim/nui.nvim'
+        }
+    }
+
     -- LSP SUPPORT
     use { 'neovim/nvim-lspconfig' }
     use { 'williamboman/mason.nvim' }
@@ -97,7 +105,6 @@ return require('packer').startup(function(use)
     use { 'hrsh7th/cmp-nvim-lua' }
     use { 'hrsh7th/cmp-path' }
     use { 'saadparwaiz1/cmp_luasnip' }
-    use { 'windwp/nvim-ts-autotag' }
 
     -- Snippets
     use { 'L3MON4D3/LuaSnip' }
@@ -119,7 +126,7 @@ return require('packer').startup(function(use)
                 options = {
                     title = "~/sommmtoooo/code",
                     background = true,
-                    theme = "midnight",
+                    theme = "crimson",
                     dark_mode = true,
                     padding = 32,
                     logging_enabled = false,
@@ -128,15 +135,5 @@ return require('packer').startup(function(use)
                 },
             }
         end
-    }
-
-    -- Noise
-    use {
-        "folke/noice.nvim",
-        opts = {},
-        requires = {
-            "MunifTanjim/nui.nvim",
-            "rcarriga/nvim-notify",
-        }
     }
 end)
