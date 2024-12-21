@@ -166,6 +166,18 @@ _G.packer_plugins = {
     path = "/home/somto/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["noice.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/somto/.local/share/nvim/site/pack/packer/opt/noice.nvim",
+    url = "https://github.com/folke/noice.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/somto/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/somto/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -193,6 +205,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/somto/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/home/somto/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -251,7 +268,7 @@ _G.packer_plugins = {
   },
   ["rayso.nvim"] = {
     commands = { "Rayso" },
-    config = { "\27LJ\2\nÿ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\b\ntitle\22~/sommmtoooo/code\ntheme\rmidnight\17logging_path\t/tmp\20logging_enabled\1\fpadding\3 \14dark_mode\2\17logging_file\14rayso.log\15background\2\1\0\2\ropen_cmd\19microsoft-edge\rbase_url\19https://ray.so\nsetup\nrayso\frequire\0" },
+    config = { "\27LJ\2\nÿ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\b\ntitle\22~/sommmtoooo/code\ntheme\rmidnight\17logging_file\14rayso.log\14dark_mode\2\17logging_path\t/tmp\20logging_enabled\1\fpadding\3 \15background\2\1\0\2\rbase_url\19https://ray.so\ropen_cmd\19microsoft-edge\nsetup\nrayso\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -331,13 +348,6 @@ time([[Setup for markdown-preview.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.api.nvim_create_user_command, 'Rayso', function(cmdargs)
-          require('packer.load')({'rayso.nvim'}, { cmd = 'Rayso', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'rayso.nvim'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('Rayso ', 'cmdline')
-      end})
 pcall(vim.api.nvim_create_user_command, 'CodeActionMenu', function(cmdargs)
           require('packer.load')({'nvim-code-action-menu'}, { cmd = 'CodeActionMenu', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -373,6 +383,13 @@ pcall(vim.api.nvim_create_user_command, 'Start', function(cmdargs)
           require('packer.load')({'vim-dispatch'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('Start ', 'cmdline')
       end})
+pcall(vim.api.nvim_create_user_command, 'Rayso', function(cmdargs)
+          require('packer.load')({'rayso.nvim'}, { cmd = 'Rayso', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'rayso.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Rayso ', 'cmdline')
+      end})
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
@@ -381,6 +398,10 @@ vim.cmd [[au!]]
 time([[Defining lazy-load filetype autocommands]], true)
 vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au VeryLazy * ++once lua require("packer.load")({'noice.nvim'}, { event = "VeryLazy *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 
 _G._packer.inside_compile = false

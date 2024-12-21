@@ -117,6 +117,7 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- Rayso
     use {
         "TobinPalmer/rayso.nvim",
         cmd = { "Rayso" },
@@ -135,6 +136,17 @@ return require('packer').startup(function(use)
                     logging_file = "rayso.log",
                 },
             }
-        end,
+        end
+    }
+
+    -- Noise
+    use {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {},
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        }
     }
 end)
