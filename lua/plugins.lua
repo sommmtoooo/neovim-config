@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
         priority = 1000,
         opts = {},
     }
+    use 'cesaralvarod/tokyogogh.nvim'
     use 'shaunsingh/solarized.nvim'
 
     -- Status Line
@@ -105,5 +106,35 @@ return require('packer').startup(function(use)
         requires = {
             'JoosepAlviste/nvim-ts-context-commentstring'
         }
+    }
+
+    -- Refactoring
+    use {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" }
+        }
+    }
+
+    use {
+        "TobinPalmer/rayso.nvim",
+        cmd = { "Rayso" },
+        config = function()
+            require("rayso").setup {
+                open_cmd = "microsoft-edge",
+                base_url = "https://ray.so",
+                options = {
+                    title = "~/sommmtoooo/code",
+                    background = true,
+                    theme = "midnight",
+                    dark_mode = true,
+                    padding = 32,
+                    logging_enabled = false,
+                    logging_path = "/tmp",
+                    logging_file = "rayso.log",
+                },
+            }
+        end,
     }
 end)

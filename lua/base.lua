@@ -26,3 +26,7 @@ vim.opt.softtabstop = 4
 vim.opt.ai = true    -- Auto Indent
 vim.opt.si = true    -- Smart Indent
 vim.opt.wrap = false -- No Wrap Lines
+
+-- Folding
+vim.o.foldmethod = "manual"
+vim.o.foldlevel = 99
