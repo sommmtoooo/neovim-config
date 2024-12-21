@@ -1,4 +1,4 @@
-local status, packer = pcall(require, 'packer')
+local status, _ = pcall(require, 'packer')
 if (not status) then
     print('Packer is not installed')
     return
@@ -142,7 +142,6 @@ return require('packer').startup(function(use)
     -- Noise
     use {
         "folke/noice.nvim",
-        event = "VeryLazy",
         opts = {},
         requires = {
             "MunifTanjim/nui.nvim",
