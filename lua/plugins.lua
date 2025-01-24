@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
 
     -- Themes
     use { 'sainnhe/gruvbox-material' }
+    use { 'ayu-theme/ayu-vim' }
     use { 'lunarvim/primer.nvim', lazy = false }
     use { "ellisonleao/gruvbox.nvim" }
     use { "olimorris/onedarkpro.nvim" }
@@ -34,7 +35,9 @@ return require('packer').startup(function(use)
         opts = {},
     }
     use 'cesaralvarod/tokyogogh.nvim'
-    use 'shaunsingh/solarized.nvim'
+    use {
+        'maxmx03/solarized.nvim'
+    }
 
     -- Status Line
     use 'hoob3rt/lualine.nvim'

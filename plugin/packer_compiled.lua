@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/somto/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["ayu-vim"] = {
+    loaded = true,
+    path = "/home/somto/.local/share/nvim/site/pack/packer/start/ayu-vim",
+    url = "https://github.com/ayu-theme/ayu-vim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/somto/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -256,7 +261,7 @@ _G.packer_plugins = {
   },
   ["rayso.nvim"] = {
     commands = { "Rayso" },
-    config = { "\27LJ\2\nþ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\b\20logging_enabled\1\fpadding\3 \14dark_mode\2\ntitle\22~/sommmtoooo/code\ntheme\fcrimson\17logging_file\14rayso.log\15background\2\17logging_path\t/tmp\1\0\2\rbase_url\19https://ray.so\ropen_cmd\19microsoft-edge\nsetup\nrayso\frequire\0" },
+    config = { "\27LJ\2\nþ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\b\ntheme\fcrimson\15background\2\fpadding\3 \17logging_path\t/tmp\20logging_enabled\1\ntitle\22~/sommmtoooo/code\14dark_mode\2\17logging_file\14rayso.log\1\0\2\ropen_cmd\19microsoft-edge\rbase_url\19https://ray.so\nsetup\nrayso\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -266,7 +271,7 @@ _G.packer_plugins = {
   ["solarized.nvim"] = {
     loaded = true,
     path = "/home/somto/.local/share/nvim/site/pack/packer/start/solarized.nvim",
-    url = "https://github.com/shaunsingh/solarized.nvim"
+    url = "https://github.com/maxmx03/solarized.nvim"
   },
   ["tabby.nvim"] = {
     loaded = true,
@@ -338,13 +343,6 @@ pcall(vim.api.nvim_create_user_command, 'CodeActionMenu', function(cmdargs)
           require('packer.load')({'nvim-code-action-menu'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('CodeActionMenu ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'Dispatch', function(cmdargs)
-          require('packer.load')({'vim-dispatch'}, { cmd = 'Dispatch', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-dispatch'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('Dispatch ', 'cmdline')
-      end})
 pcall(vim.api.nvim_create_user_command, 'Make', function(cmdargs)
           require('packer.load')({'vim-dispatch'}, { cmd = 'Make', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -372,6 +370,13 @@ pcall(vim.api.nvim_create_user_command, 'Rayso', function(cmdargs)
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'rayso.nvim'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('Rayso ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'Dispatch', function(cmdargs)
+          require('packer.load')({'vim-dispatch'}, { cmd = 'Dispatch', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dispatch'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Dispatch ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
 
